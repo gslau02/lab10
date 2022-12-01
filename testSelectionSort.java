@@ -76,12 +76,56 @@ public class testSelectionSort {
     }
 
 		public void testMixed(){
+        int[] arr = new int[5];
+        arr[0] = 8;
+        arr[1] = -9;
+        arr[2] = 0;
+        arr[3] = 3;
+        arr[4] = -2;
 
-        /** Test data contains with both positive, negative and zeros **/
+        int[] Sortedarr = new int[5];
+        Sortedarr[0] = -9;
+        Sortedarr[1] = -2;
+        Sortedarr[2] = 0;
+        Sortedarr[3] = 3;
+        Sortedarr[4] = 8;
+
+        SelectionSort temp = new SelectionSort();
+        int[] output = new int[5];
+        output = temp.basicSelectionSort(arr);
+        String Outstr = "";
+        for (int i = 0; i < 5; i++)
+        	Outstr = Outstr + output[i] + " ";
+        String Sortedstr = "";
+        for (int i = 0; i < 5; i++)
+        	Sortedstr = Sortedstr + Sortedarr[i] + " ";
+        assertEquals("Test Mixed failed.", Sortedstr , Outstr);
     }
 
     public void testDuplicates(){
+        int[] arr = new int[5];
+        arr[0] = 8;
+        arr[1] = 8;
+        arr[2] = 2;
+        arr[3] = -2;
+        arr[4] = -2;
 
-        /** Test data contains duplicates **/
+        int[] Sortedarr = new int[5];
+        Sortedarr[0] = -2;
+        Sortedarr[1] = -2;
+        Sortedarr[2] = 2;
+        Sortedarr[3] = 8;
+        Sortedarr[4] = 8;
+
+        SelectionSort temp = new SelectionSort();
+        int[] output = new int[5];
+        output = temp.basicSelectionSort(arr);
+        String Outstr = "";
+        for (int i = 0; i < 5; i++)
+        	Outstr = Outstr + output[i] + " ";
+        String Sortedstr = "";
+        for (int i = 0; i < 5; i++)
+        	Sortedstr = Sortedstr + Sortedarr[i] + " ";
+        assertEquals("Test Duplicates failed.", Sortedstr , Outstr);
     }
 }
